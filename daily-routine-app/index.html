@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Routine Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+</head>
+
+
+
+<body>
+
+    <div class="app-container">
+
+        <h1>Daily Routine</h1>
+
+        <input type="date" id="datePicker">
+
+        <div id="addTaskBox">
+            <input type="text" id="taskInput" placeholder="Add new task">
+            <button id="addTaskBtn" type="button">+</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="progress-container">
+            <div class="progress-text">
+                Progress: <span id="progressValue">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="water-section">
+            <h2>Water Intake 💧</h2>
+            <p>Glasses today: <span id="waterCount">0</span></p>
+            <div class="water-buttons">
+                <button id="addWater" type="button">+ Glass</button>
+                <button id="removeWater" type="button">- Glass</button>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2>My Status 📊</h2>
+            <p>🔥 Streak: <span id="streakValue">0</span> days</p>
+            <p>📅 Weekly Completion: <span id="weeklyValue">0%</span></p>
+            <p>🗓 Monthly Completion: <span id="monthlyValue">0%</span></p>
+        </div>
+
+        <!-- GRAPH SECTION -->
+        <div class="stats-section">
+            <h2>Progress Graphs 📊</h2>
+
+            <canvas id="weeklyChart" height="200"></canvas>
+            <br>
+            <canvas id="monthlyChart" height="200"></canvas>
+        </div>
+
+
+    </div>
+
+    <!-- IMPORTANT: script at the END -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+
+
+</body>
+
+
+
+</html>
